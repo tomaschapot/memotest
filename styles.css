@@ -1,0 +1,23 @@
+.main-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100vw;
+	height: 90vh;
+	gap: 10px;
+	flex-wrap: wrap;
+	max-width: 80%;
+	margin: 0 auto;
+	margin-top: 2.4%;
+}
+
+.column {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.card {
+	border: 2px solid black;
+	flex: 1;
+}
