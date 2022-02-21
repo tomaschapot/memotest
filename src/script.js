@@ -4,6 +4,7 @@ const $board = document.querySelector(".board");
 const $cards = $board.querySelectorAll(".card");
 const colors = ["red", "blue", "orange", "green", "yellow", "violet"];
 const doubleColors = colors.concat(colors); // duplicates the array for the 12 cards.
+let $firstCard = 0; //saves the first click you did.
 
 function gameConfig() {
 	function assignColor() {
@@ -33,15 +34,31 @@ elementInteraction($board);
 
 function elementInteraction(board) {
 	board.onclick = function (e) {
-		const $elemento = e.target; // Selects the element clicked.
-		if ($elemento.classList.contains("card")) {
-			cardHandler($elemento);
+		//uses event bubbling to click on board and his childs
+		const $element = e.target; // Selects the element clicked.
+		if ($element.classList.contains("card")) {
+			showCard($element);
+			cardHandler($element);
 		}
 	};
 }
 
 function cardHandler(currentCard) {
-	showCard(currentCard);
+	if ($firstCard === 0) {
+		$firstCard = currentCard;
+		console.log($firstCard);
+	} else if ($firstCard === currentCard) {
+		return;
+	} else if (cardComparison(currentCard, $firstCard)) {
+		showCard(currentCard);
+		showCard($firstCard);
+		console.log("se activo");
+		$firstCard = 0;
+	} else {
+		hideCard(currentCard);
+		hideCard($firstCard);
+		$firstCard = 0;
+	}
 }
 function arrayShuffle(array) {
 	let currentIndex = array.length;
@@ -61,6 +78,16 @@ function arrayShuffle(array) {
 }
 function showCard(card) {
 	card.classList.remove("hidden-color");
+}
+
+function hideCard(card) {
+	setTimeout(() => {
+		card.classList.add("hidden-color");
+	}, 700);
+}
+
+function cardComparison(currentCard, firstCard) {
+	return currentCard.className === firstCard.className;
 }
 
 /*
