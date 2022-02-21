@@ -1,4 +1,4 @@
-.main-container {
+.board {
 	display: flex;
 	justify-content: space-between;
 	width: 100vw;
@@ -20,4 +20,25 @@
 .card {
 	border: 2px solid black;
 	flex: 1;
+}
+
+/*Card Colors*/
+
+.red {
+	background-color: red;
+}
+.blue {
+	background-color: blue;
+}
+.violet {
+	background-color: violet;
+}
+.yellow {
+	background-color: yellow;
+}
+.green {
+	background-color: green;
+}
+.orange {
+	background-color: orange;
 }
