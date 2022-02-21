@@ -24,6 +24,10 @@
 
 /*Card Colors*/
 
+.hidden-color {
+	background-color: rgb(121, 117, 117) !important;
+}
+
 .red {
 	background-color: red;
 }
