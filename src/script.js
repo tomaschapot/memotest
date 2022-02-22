@@ -39,6 +39,7 @@ function elementInteraction(board) {
 		if ($element.classList.contains("card")) {
 			showCard($element);
 			cardHandler($element);
+			gameOver($cards);
 		}
 	};
 }
@@ -88,6 +89,21 @@ function hideCard(card) {
 
 function cardComparison(currentCard, firstCard) {
 	return currentCard.className === firstCard.className;
+}
+
+function gameOver($cards) {
+	let counter = 0;
+	$cards.forEach((card) => {
+		if (card.className.length < 12) {
+			counter++;
+		}
+
+		if (counter == 12) {
+			console.log("you won");
+			document.querySelector("main").classList.add("hide");
+			document.querySelector("title").classList.remove("hide");
+		}
+	});
 }
 
 /*
