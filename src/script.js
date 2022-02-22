@@ -101,7 +101,7 @@ function gameOver($cards) {
 		if (counter == 12) {
 			console.log("you won");
 			document.querySelector("main").classList.add("hide");
-			document.querySelector("title").classList.remove("hide");
+			document.querySelector(".title").classList.remove("hide");
 		}
 	});
 }
