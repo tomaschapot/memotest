@@ -4,6 +4,7 @@ const $board = document.querySelector(".board");
 const $cards = $board.querySelectorAll(".card");
 const colors = ["red", "blue", "orange", "green", "yellow", "violet"];
 const doubleColors = colors.concat(colors); // duplicates the array for the 12 cards.
+let $winContainer = document.querySelector("#container");
 let $firstCard = 0; //saves the first click you did.
 
 function gameConfig() {
@@ -12,6 +13,7 @@ function gameConfig() {
 		arrayShuffle(doubleColors);
 
 		$cards.forEach((card) => {
+			card.className = "card";
 			card.classList.add(doubleColors[counter]);
 			counter++;
 		});
@@ -102,8 +104,25 @@ function gameOver($cards) {
 			console.log("you won");
 			document.querySelector("main").classList.add("hide");
 			document.querySelector(".title").classList.remove("hide");
+			const $button = document.createElement("button");
+			$button.innerText = "Play Again";
+			$button.classList.add("play-button");
+			$winContainer.classList.add("win-container");
+			$winContainer.appendChild($button);
+			reset($button);
 		}
 	});
+}
+
+function reset(playButton) {
+	playButton.onclick = function () {
+		playButton.remove();
+		$winContainer.classList.remove("win-container");
+
+		gameConfig();
+		document.querySelector("main").classList.remove("hide");
+		document.querySelector(".title").classList.add("hide");
+	};
 }
 
 /*

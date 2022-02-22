@@ -1,3 +1,7 @@
+body {
+	background-color: black;
+}
+
 .board {
 	display: flex;
 	justify-content: space-between;
@@ -20,12 +24,13 @@
 .card {
 	border: 2px solid black;
 	flex: 1;
+	border-radius: 1rem;
 }
 
 /*Card Colors*/
 
 .hidden-color {
-	background-color: rgb(121, 117, 117) !important;
+	background-color: rgba(121, 117, 117, 0.37) !important;
 }
 
 .red {
@@ -61,4 +66,16 @@
 	top: 5%;
 	left: 5%;
 	margin: 0 auto;
+	color: white;
+}
+.play-button {
+	padding: 20px;
+	font-size: 2rem;
+	margin-top: 12rem;
+}
+.win-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
