@@ -52,7 +52,7 @@ body {
 	background-color: orange;
 }
 .hide {
-	visibility: hidden;
+	display: none;
 }
 
 .show {
@@ -61,21 +61,18 @@ body {
 
 .title {
 	text-align: center;
-	font-size: 20rem;
-	position: absolute;
-	top: 5%;
-	left: 5%;
+	font-size: 15vh;
+
 	margin: 0 auto;
 	color: white;
 }
 .play-button {
 	padding: 20px;
 	font-size: 2rem;
-	margin-top: 12rem;
+	margin-top: 5rem;
 }
 .win-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
 }
