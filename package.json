@@ -1,0 +1,24 @@
+{
+	"name": "memotest",
+	"version": "1.0.0",
+	"description": "A memotest game",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"cypress-dev": "cypress open",
+		"cypress-run": "cypress run"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tomaschapot/memotest.git"
+	},
+	"author": "Tomas Chapot",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/tomaschapot/memotest/issues"
+	},
+	"homepage": "https://github.com/tomaschapot/memotest#readme",
+	"devDependencies": {
+		"cypress": "^9.5.0"
+	}
+}
